@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from django.views.generic import ListView
 
-from app_sale.models.orders import OrderItem
+from app_sale.models.order import OrderItem
 from app_sale.forms.order_form import OrderForm
 from app_sale.addcart import Cart
 

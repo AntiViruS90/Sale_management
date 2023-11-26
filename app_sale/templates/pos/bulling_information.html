@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% block title %} Checkout {% endblock %}
+
+{% block content %}
+    <div class="content">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="box">
+                    <div class="box-header">
+                        <h4 class="box-header">Confirm Order</h4>
+                    </div>
+                    <div class="box-body">
+                        <form action="{% url 'bulling_information' %}" method="post" class="register-form">
+                            {% csrf_token %}
+                            <div class="form-group">
+                                <label for="full_name" class="info-title">Your Full Name</label>
+                                {{ form.full_name }}
+                            </div>
+                            <div class="form-group">
+                                <label for="email" class="info-title">Email Address</label>
+                                {{ form.email }}
+                            </div>
+                            <div class="form-group">
+                                <label for="phn_number" class="info-title">Your Phone Number</label>
+                                {{ form.phn_number }}
+                            </div>
+                            <div class="form-group">
+                                <label for="address" class="info-title">Your Address</label>
+                                {{ form.address }}
+                            </div>
+                            <button type="submit"
+                                class="btn-upper btn btn-primary checkout-page-button">Confirm Order
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock content %}

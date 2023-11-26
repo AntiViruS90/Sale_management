@@ -36,6 +36,13 @@ def cart_add(request, id):
     return redirect('pos_view')
 
 
+def cart_remove(request, id):
+    cart = Cart(request)
+    product = get_object_or_404(Product, id=id)
+    cart.remove(product)
+    return redirect('pos_view')
+
+
 @require_POST
 def cart_updated(request, id):
     number = None
