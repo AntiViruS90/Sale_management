@@ -17,70 +17,72 @@
     <ul class="sidebar-menu" data-widget=tree"">
         <li class="header">MAIN FEATURES</li>
         <li class="active treeview">
-            <a href="#"><i class="fa fa-dashboard"><span>Dashboard</span></i><span>Dashboard</span>
+            <a href="#"><i class="fa fa-dashboard"><span>Dashboard</span></i>
             <span class="pull-right-container"></span></a>
         </li>
-        <li class="treeview">
+        <li class="treeview" id="configuration">
             <a href="#">
                 <i class="fa fa-pie-chart"></i>
                 <span>Configuration</span>
-                <span class="pull-right-container"></span>
+                <span class="pull-right-container">
+                    <i class="fa fa-angle-left pull-right" id="configuration_angle"></i>
+                </span>
             </a>
 
-            <ul class="treeview-menu">
+            <ul class="treeview-menu" id="configuration_menu">
                 <li><a href="{% url 'create_category' %}"><i class="fa fa-circle-o"></i>Add Category</a></li>
                 <li><a href="{% url 'category_list' %}"><i class="fa fa-circle-o"></i>All Category</a></li>
                 <li><a href="{% url 'create_list_tag' %}"><i class="fa fa-circle-o"></i>All Tag</a></li>
             </ul>
         </li>
-        <li class="treeview">
+        <li class="treeview" id="inventory">
             <a href="#">
                 <i class="fa fa-laptop"></i>
                 <span>Inventory</span>
                 <span class="pull-right-container">
-                    <i class="fa fa-angle-left pull-right"></i>
+                    <i class="fa fa-angle-left pull-right" id="inventory_angle"></i>
                 </span>
             </a>
-            <ul class="treeview-menu">
+            <ul class="treeview-menu" id="inventory_menu">
                 <li><a href="{% url 'inventory_create' %}"><i class="fa fa-circle-o"></i>Add Inventory</a></li>
                 <li><a href="{% url 'inventory_list' %}"><i class="fa fa-circle-o"></i>All Inventory</a></li>
             </ul>
         </li>
-        <li class="treeview">
+        <li class="treeview" id="product">
             <a href="#">
                 <i class="fa fa-product-hunt"></i>
                 <span>Product</span>
                 <span class="pull-right-container">
-                    <i class="fa fa-angle-left pull-right"></i>
+                    <i class="fa fa-angle-left pull-right" id="product_angle"></i>
                 </span>
             </a>
-            <ul class="treeview-menu">
+            <ul class="treeview-menu" id="product_menu">
                 <li><a href="{% url 'product_create' %}"><i class="fa fa-circle-o"></i>Add Product</a></li>
                 <li><a href="{% url 'product_list' %}"><i class="fa fa-circle-o"></i>All Product</a></li>
             </ul>
         </li>
-        <li class="treeview">
+        <li class="treeview" id="POS">
             <a href="#">
                 <i class="fa fa-first-order"></i>
                 <span>POS</span>
                 <span class="pull-right-container">
-                    <i class="fa fa-angle-left pull-right"></i>
+                    <i class="fa fa-angle-left pull-right" id="POS_angle"></i>
                 </span>
             </a>
-            <ul class="treeview-menu">
+            <ul class="treeview-menu" id="POS_menu">
                 <li><a href="{% url 'pos_view' %}"><i class="fa fa-circle-o"></i>Create Order</a></li>
                 <li><a href="{% url 'order_information' %}"><i class="fa fa-circle-o"></i>Order Record</a></li>
             </ul>
         </li>
-        <li class="treeview">
+        <li class="treeview" id="settings">
             <a href="#">
                 <i class="fa fa-gears"></i>
                 <span>Settings</span>
                 <span class="pull-right-container">
-                    <i class="fa fa-angle-left pull-right"></i>
+                    <i class="fa fa-angle-left pull-right" id="settings_angle"></i>
                 </span>
             </a>
-            <ul class="treeview-menu">
+            <ul class="treeview-menu" id="settings_menu">
                 <li><a href="#"><i class="fa fa-circle-o"></i>Password Change</a></li>
                 <li><a href="#"><i class="fa fa-circle-o"></i>Add User</a></li>
                 <li><a href="#"><i class="fa fa-circle-o"></i>All User</a></li>

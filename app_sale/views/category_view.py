@@ -18,7 +18,7 @@ class CategoryCreateView(SuccessMessageMixin, CreateView):
 
 @method_decorator(login_required(login_url='/login/'), name='dispatch')
 class CategoryListView(ListView):
-    template_name = 'category/category-list.html'
+    template_name = 'category/category_list.html'
     model = Category
     context_object_name = 'category'
     paginate_by = 10

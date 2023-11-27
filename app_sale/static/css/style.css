@@ -1,0 +1,60 @@
+.user-panel {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding-left: 20px;
+    width: 91%;
+}
+.user-panel>.info {
+    padding: 0;
+    line-height: 1;
+    position: absolute;
+    left: 80px;
+    top: -3px;
+}
+.treeview a span:hover {
+    margin-left: 5px;
+}
+.treeview a i span {
+    padding-left: 8px;
+}
+.navbar-custom-menu ul {
+    marker: none;
+}
+.dropdown-menu {
+    display: none;
+    background: none;
+}
+#fa-close {
+    position: relative;
+    bottom: -22px;
+    left: 262px;
+}
+.box-red {
+    border-radius: 14px;
+    box-shadow: 3px 6px 12px red, -3px -6px 12px red;
+}
+.box-blue {
+    border-radius: 14px;
+    box-shadow: 3px 6px 12px blue, -3px -6px 12px blue;
+}
+.box-green {
+    border-radius: 14px;
+    box-shadow: 3px 6px 12px green, -3px -6px 12px green;
+}
+.box-orange {
+    border-radius: 14px;
+    box-shadow: 3px 6px 12px orange, -3px -6px 12px orange;
+}
+.small-box .small-box-footer {
+    border-radius: 0 0 14px 14px;
+}
+.skin-red .main-header .logo {
+    width: 200px;
+}
+
+@media (max-width: 991px) {
+    .navbar-custom-menu .navbar-nav {
+        margin: 13px;
+        float: left;
+}
+}

@@ -40,7 +40,7 @@ primary_domain = 'js'
 # coming with Sphinx (named 'sphinx.ext.*') or your custom ones.
 extensions = []
 
-# Add any paths that contain templates here, relative to this directory.
+# Add any paths that contain site-templates here, relative to this directory.
 templates_path = ['_templates']
 
 # The suffix of source filenames.
@@ -137,10 +137,10 @@ html_static_path = ['_static']
 # typographically correct entities.
 #html_use_smartypants = True
 
-# Custom sidebar templates, maps document names to template names.
+# Custom sidebar site-templates, maps document names to template names.
 #html_sidebars = {}
 
-# Additional templates that should be rendered to pages, maps page names to
+# Additional site-templates that should be rendered to pages, maps page names to
 # template names.
 #html_additional_pages = {}
 

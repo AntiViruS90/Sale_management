@@ -8,8 +8,8 @@
     {% block stylesheet %}
         {% include 'stylesheet.html' %}
     {% endblock stylesheet %}
-    <script src="{% static 'js/html5shiv.js' %}"></script>
-    <script src="{% static 'js/respond.min.js' %}"></script>
+
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <link rel="stylesheet"
           href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
 </head>
@@ -35,5 +35,8 @@
                 });
             });
         </script>
+        <script src="{% static 'js/html5shiv.js' %}"></script>
+        <script src="{% static 'js/respond.min.js' %}"></script>
+        <script src="{% static 'js/js.js' %}"></script>
     </body>
 </html>
