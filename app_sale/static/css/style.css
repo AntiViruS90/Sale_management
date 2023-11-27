@@ -1,3 +1,32 @@
+.content-wrapper {
+    background: linear-gradient(37deg, lightgrey, lightskyblue, lightblue);
+}
+.auth-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.custom-control {
+    margin-left: -2px;
+    font-size: 14px;
+}
+.input_login {
+    border: none;
+    margin-bottom: 10px;
+}
+input[type="checkbox"] {
+    margin: 1px;
+    width: 10px;
+    height: 10px;
+}
+.btn-success {
+    width: 173px;
+}
+.social-auth-links a {
+    text-decoration: none;
+    color: #fff;
+}
 .user-panel {
     margin-top: 20px;
     margin-bottom: 20px;
@@ -17,8 +46,11 @@
 .treeview a i span {
     padding-left: 8px;
 }
-.navbar-custom-menu ul {
-    marker: none;
+.navbar-nav {
+    margin-right: 30px;
+}
+ul, li {
+    list-style: none;
 }
 .dropdown-menu {
     display: none;
@@ -51,10 +83,14 @@
 .skin-red .main-header .logo {
     width: 200px;
 }
-
 @media (max-width: 991px) {
     .navbar-custom-menu .navbar-nav {
         margin: 13px;
         float: left;
+    }
+}
+@media (max-width: 768px) {
+    .skin-red .main-header .logo {
+    width: 100%;
 }
 }
