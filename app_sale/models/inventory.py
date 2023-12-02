@@ -1,4 +1,5 @@
 from django.db import models as m
+from django.urls import reverse
 
 from app_sale.models.base import BaseEntity
 from app_sale.models.category import Category
@@ -15,7 +16,10 @@ class Inventory(BaseEntity):
     sales_price = m.IntegerField(default=0)
     promotional_price = m.IntegerField(default=0)
     tags = m.ManyToManyField(Tag, blank=True, related_name='inventory_tag')
-    picture = m.ImageField(upload_to='inventory/%Y/%m/%d/', null=True, blank=True)
+    picture = m.ImageField(upload_to='inventory', null=True, blank=True, verbose_name='Фото')
 
     def __str__(self):
         return self.name
+
+    def get_absolute_url(self):
+        return reverse('inventory_list', args=[self.id])

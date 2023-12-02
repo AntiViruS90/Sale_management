@@ -18,23 +18,9 @@
             <div class="login-logo">
                 <a href="/">Point of Sale Login</a>
             </div>
-          <!-- /.login-logo -->
           {% block content %}{% endblock %}
-          <!-- /.login-box-body -->
         </div>
-    <!-- /.login-box -->
-
             {% include 'javascript.html' %}
-
-{#        <script>#}
-{#            $(function () {#}
-{#                $('input').iCheck({#}
-{#                  checkboxClass: 'icheckbox_square-blue',#}
-{#                  radioClass: 'iradio_square-blue',#}
-{#                  increaseArea: '20%' /* optional */#}
-{#                });#}
-{#            });#}
-{#        </script>#}
         <script src="{% static 'js/html5shiv.js' %}"></script>
         <script src="{% static 'js/respond.min.js' %}"></script>
         <script src="{% static 'js/js.js' %}"></script>

@@ -12,14 +12,56 @@
                                 <h3 class="box-title">Inventory List</h3>
                             </div>
                             <div class="col-lg-6 text-right">
-                                <a href="{% url 'inventory_create' %}" title="Create Inventory" data-toggle="tooltip"
+                                <a href="{% url 'create_inventory' %}" title="Create Inventory" data-toggle="tooltip"
                                     data-placement="left" class="btn btn-info btn-sm">
                                     <i class="fa fa-plus"></i>
                                 </a>
                             </div>
                         </div>
                     </div>
-                    {% include 'inventory/inventory_list_component.html' %}
+                        <div class="box-body">
+                        {% if inventory_list %}
+                            <table class="table table-bordered">
+                                <tbody>
+                                    <tr>
+                                        <th>Inventory Name</th>
+                                        <th>Category</th>
+                                        <th>Stock</th>
+                                        <th>Purchase price</th>
+                                        <th>Sales price</th>
+                                        <th>Promotional price</th>
+                                        <th>Created</th>
+                                        <th>Updated</th>
+                                        <th class="text-center">Actions</th>
+                                    </tr>
+                                    {% for inventory in inventory_list %}
+                                        <tr>
+                                            <td>{{ inventory.name|truncatechars:55 }}</td>
+                                            <td>{{ inventory.category_name }}</td>
+                                            <td>{{ inventory.current_stock }} PCS</td>
+                                            <td>BDT {{ inventory.purchase_price }}</td>
+                                            <td>BDT {{ inventory.sales_price }}</td>
+                                            <td>BDT {{ inventory.promotional_price }}</td>
+                                            <td>{{ inventory.created_at }}</td>
+                                            <td>{{ inventory.updated_at }}</td>
+                                            <td class="text">
+                                                <a href="{% url 'inventory_detail' inventory.pk %}" class="btn btn-info btn-sm">
+                                                    <i class="fa fa-eye"></i></a>
+                                                <a href="{% url 'inventory_update' inventory.pk %}" class="btn btn-info btn-sm">
+                                                    <i class="fa fa-pencil"></i></a>
+                                                <a href="{% url 'inventory_delete' inventory.pk %}" class="btn btn-danger btn-sm">
+                                                    <i class="fa fa-trash"></i></a>
+                                            </td>
+                                        </tr>
+                                    {% endfor %}
+                                </tbody>
+                            </table>
+                        {% else %}
+                            <h2>No Inventory added yet</h2>
+                        {% endif %}
+                    </div>
+
+{#                    {% include 'inventory/inventory_list_component.html' %}#}
                     <div class="box-footer clearfix">
                         {% include 'common/pagination.html' %}
                     </div>

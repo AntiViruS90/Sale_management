@@ -5,6 +5,7 @@ from app_sale.models.inventory import Inventory
 
 
 class InventoryForm(f.ModelForm):
+    picture = f.ImageField(widget=f.ClearableFileInput(attrs={'class': 'form-control', 'id': 'picture'}))
 
     class Meta:
         model = Inventory
@@ -22,5 +23,5 @@ class InventoryForm(f.ModelForm):
             'purchase_price': NumberInput(attrs={'class': 'form-control', 'id': 'purchase_price'}),
             'sales_price': NumberInput(attrs={'class': 'form-control', 'id': 'sales_price'}),
             'promotional_price': NumberInput(attrs={'class': 'form-control', 'id': 'promotional_price'}),
-            'picture': FileInput(attrs={'class': 'form-control', 'id': 'picture'}),
+            'picture': f.ClearableFileInput(attrs={'class': 'form-control', 'id': 'picture'}),
         }

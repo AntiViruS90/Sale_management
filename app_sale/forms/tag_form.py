@@ -12,4 +12,3 @@ class TagForm(f.ModelForm):
         widget = {
             'name': TextInput(attrs={'class': 'form-control', 'id': 'name'}),
         }
-

@@ -18,10 +18,10 @@
                 <div class="row">
                     <div class="col-lg-4">
                         <div class="inventory_image">
-                            {% if not inventory.picture %}
-                                <img src="{% static 'dist/img/photo1.png' %}" class="img-responsive" alt="Inventory picture">
-                            {% else %}
+                            {% if inventory.picture %}
                                 <img src="/media/{{ inventory.picture }}" class="img-responsive" alt="Inventory picture">
+                            {% else %}
+                                <img src="{% static 'dist/img/default-50x50.gif' %}" class="img-responsive" alt="Inventory picture">
                             {% endif %}
                         </div>
                     </div>

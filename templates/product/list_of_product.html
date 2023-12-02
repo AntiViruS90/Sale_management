@@ -26,8 +26,47 @@
                             </div>
                         </div>
                     </div>
-
-                    {% include 'product/product_list_component.html' %}
+                    
+                    <div class="box-body">
+                        {% if product_list %}
+                            <table class="table table-bordered table-striped">
+                                <tbody>
+                                    <tr>
+                                        <th>Product Name</th>
+                                        <th>Product Category</th>
+                                        <th>Price</th>
+                                        <th>Created At</th>
+                                        <th>Image</th>
+                                        <th class="text-center">Action</th>
+                                    </tr>
+                                    {% for product in product_list %}
+                                        <tr>
+                                            <td>{{ product.title }}</td>
+                                            <td>{{ product.product_category }}</td>
+                                            <td>{{ product.price }}</td>
+                                            <td>{{ product.created_at }}</td>
+                                            <td>
+                                                {% if not product.product_image %}
+                                                    <div class="image-clean"><i class="fa fa-desktop"></i></div>
+                                                {% else %}
+                                                    <img src="/media/{{ product.product_image }}" width="40px" height="15px"
+                                                         alt="category image">
+                                                {% endif %}
+                                            </td>
+                                            <td class="text-center">
+                                                <a href="#" class="btn btn-info btn-sm">
+                                                    <i class="fa fa-pencil"></i></a>
+                                                <a href="#" class="btn btn-danger btn-sm">
+                                                    <i class="fa fa-trash"></i></a>
+                                            </td>
+                                        </tr>
+                                    {% endfor %}
+                                </tbody>
+                            </table>
+                        {% else %}
+                            <h2>Product not added yet</h2>
+                        {% endif %}
+                    </div>
 
                     <div class="box-footer clearfix">
                         {% include 'common/pagination.html' %}

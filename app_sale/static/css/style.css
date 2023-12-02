@@ -94,3 +94,7 @@ ul, li {
     width: 100%;
 }
 }
+.img-responsive {
+    width: 30%;
+    height: 30%;
+}

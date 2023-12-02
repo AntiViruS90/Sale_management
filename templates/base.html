@@ -18,26 +18,20 @@
             <header class="main-header">
                {% include 'header.html' %}
             </header>
-            <!-- Left side column. contains the logo and sidebar -->
             <aside class="main-sidebar">
                 {% include 'sidebar.html' %}
             </aside>
-
-            <!-- Content Wrapper. Contains page content -->
             <div class="content-wrapper">
                 {% block content %} {% endblock %}
             </div>
-            <!-- /.content-wrapper -->
             <footer class="main-footer">
                 <div>
                     <strong >Copyright &copy; 2023 <a href="#">Slava Nikitin</a>.</strong> All Rights Reserved.
                 </div>
             </footer>
-            <!-- Add the sidebar's background. This div must be placed
-                 immediately after the control sidebar -->
+
             <div class="control-sidebar-bg"></div>
         </div>
-        <!-- ./wrapper -->
         {% block script %}
             {% include 'javascript.html' %}
         {% endblock %}

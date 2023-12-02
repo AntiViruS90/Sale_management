@@ -2,7 +2,7 @@ from django.urls import path
 from app_sale.views.dashboard_view import Dashboard
 from app_sale.views.auth_view import UserLoginView, LogoutView
 from app_sale.views.category_view import CategoryCreateView, CategoryListView, CategoryUpdateView, CategoryDeleteView
-from app_sale.views.inventory_view import CreateInventoryView, InventoryListView, InventoryDetailView, \
+from app_sale.views.inventory_view import InventoryCreateView, InventoryListView, InventoryDetailView, \
     InventoryUpdateView, InventoryDeleteView
 from app_sale.views.tag_view import CreateListTagView, TagDeleteView
 from app_sale.views.product_view import CreateProductView, ProductListView
@@ -18,7 +18,7 @@ urlpatterns = [
     path('category/', CategoryListView.as_view(), name='category_list'),
     path('category/<pk>/', CategoryUpdateView.as_view(), name='category_update'),
     path('category-delete/<pk>/', CategoryDeleteView.as_view(), name='category_delete'),
-    path('create-inventory/', CreateInventoryView.as_view(), name='inventory_create'),
+    path('create-inventory/', InventoryCreateView.as_view(), name='create_inventory'),
     path('inventory/', InventoryListView.as_view(), name='inventory_list'),
     path('inventory/<pk>', InventoryDetailView.as_view(), name='inventory_detail'),
     path('inventory-update/<pk>', InventoryUpdateView.as_view(), name='inventory_update'),

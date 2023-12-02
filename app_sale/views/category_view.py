@@ -20,7 +20,7 @@ class CategoryCreateView(SuccessMessageMixin, CreateView):
 class CategoryListView(ListView):
     template_name = 'category/category_list.html'
     model = Category
-    context_object_name = 'category'
+    context_object_name = 'category_list'
     paginate_by = 10
 
 

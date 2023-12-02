@@ -25,8 +25,50 @@
                             </div>
                         </div>
                     </div>
+                    
+                    <div class="box-body">
+                        {% if category_list %}
+                            <table class="table table-dark table-striped col-lg-8 col-md-8 col-sm-10 col-12">
+                                <tbody>
+                                    <tr>
+                                        <th>Sub Category</th>
+                                        <th>Parent Category</th>
+                                        <th>Is Active</th>
+                                        <th>Created At</th>
+                                        <th>Image</th>
+                                        <th class="text-center">Action</th>
+                                    </tr>
+                                    {% for category in category_list %}
+                                        <tr>
+                                            <td>{{ category.name }}</td>
+                                            <td>{% if not category.parent %} <-> {% else %} {{ category.parent }} {% endif %}</td>
+                                            <td>{% if category.is_active == 1 %}
+                                                <span class="badge bg-green">Active</span> {% else %}
+                                                <span class="badge bg-red">Deactivated</span> {% endif %}</td>
+                                            <td>{{ category.created_at }}</td>
+                                            <td>{% if not category.category_image %}
+                                                    <div class="image-not-found"><i class="fa fa-desktop"></i></div>
+                                                {% else %}
+                                                <img src="/media/{{ category.category_image }}" alt="category image"
+                                                     width="40px" height="40px">
+                                                {% endif %}
+                                            </td>
+                                            <td class="text-center">
+                                                <a href="{% url 'category_update' category.pk %}" class="btn btn-info btn-sm">
+                                                    <i class="fa fa-pencil"></i></a>
+                                                <a href="{% url 'category_delete' category.pk %}" class="btn btn-danger btn-sm">
+                                                    <i class="fa fa-trash"></i></a>
+                                            </td>
+                                        </tr>
+                                    {% endfor %}
+                                </tbody>
+                            </table>
+                        {% else %}
+                            <h2>Category not added yet</h2>
+                        {% endif %}
+                    </div>
 
-                    {% include 'category/category_list_component.html' %}
+{#                    {% include 'category/category_list_compcategorynt.html' %}#}
 
                     <div class="box-footer clearfix">
                         {% include 'common/pagination.html' %}

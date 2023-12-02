@@ -20,4 +20,4 @@ class CreateProductView(SuccessMessageMixin, CreateView):
 class ProductListView(ListView):
     template_name = 'product/list_of_product.html'
     model = Product
-    context_object_name = 'product'
+    context_object_name = 'product_list'
