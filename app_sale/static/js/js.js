@@ -1,10 +1,12 @@
 $(document).ready(function () {
 
     $('#configuration').click(function () {
-        $('#configuration_menu').slideDown(200);
+        $('#configuration_menu').slideToggle(200);
         $('#configuration_angle').css({
-            'transform': 'rotate(-90deg)'
+            'transform': 'rotate(-90deg)',
+
         });
+
         $('#settings_menu').slideUp(200);
         $('#settings_angle').css({
             'transform': 'rotate(0deg)'

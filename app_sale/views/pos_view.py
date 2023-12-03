@@ -32,7 +32,7 @@ class POSView(View):
 def cart_add(request, id):
     cart = Cart(request)
     product = get_object_or_404(Product, id=id)
-    cart.remove(product)
+    cart.add(product)
     return redirect('pos_view')
 
 
@@ -45,7 +45,6 @@ def cart_remove(request, id):
 
 @require_POST
 def cart_updated(request, id):
-    number = None
     cart = Cart(request)
     if request.method == 'POST':
         number = int(request.POST.get('number'))

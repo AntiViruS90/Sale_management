@@ -1,4 +1,7 @@
 {% load static %}
+<link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+<link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
 <section class="sidebar">
     <div class="user-panel">
         <div class="pull-left image">
@@ -16,24 +19,31 @@
     </div>
     <ul class="sidebar-menu" data-widget=tree"">
         <li class="header">MAIN FEATURES</li>
-        <li class="active treeview">
-            <a href="#"><i class="fa fa-dashboard"><span>Dashboard</span></i>
-            <span class="pull-right-container"></span></a>
-        </li>
-        <li class="treeview" id="configuration">
+        <li class="mb-1">
             <a href="#">
                 <i class="fa fa-pie-chart"></i>
-                <span>Category</span>
-                <span class="pull-right-container">
-                    <i class="fa fa-angle-left pull-right" id="configuration_angle"></i>
-                </span>
+                <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed"
+                        data-bs-toggle="collapse" data-bs-target="#home-collapse" aria-expanded="true">Category</button>
             </a>
+            <div class="collapse show" id="home-collapse">
+              <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                <li><a href="{% url 'create_category' %}"
+                       class="link-body-emphasis d-inline-flex text-decoration-none rounded">
+                    <i class="fa fa-circle-o"></i>Add Category</a></li>
+                <li><a href="{% url 'category_list' %}"
+                       class="link-body-emphasis d-inline-flex text-decoration-none rounded">
+                    <i class="fa fa-circle-o"></i>All Category</a></li>
+                <li><a href="{% url 'create_list_tag' %}"
+                       class="link-body-emphasis d-inline-flex text-decoration-none rounded">
+                    <i class="fa fa-circle-o"></i>All Tag</a></li>
+              </ul>
+            </div>
 
-            <ul class="treeview-menu" id="configuration_menu">
-                <li><a href="{% url 'create_category' %}"><i class="fa fa-circle-o"></i>Add Category</a></li>
-                <li><a href="{% url 'category_list' %}"><i class="fa fa-circle-o"></i>All Category</a></li>
-                <li><a href="{% url 'create_list_tag' %}"><i class="fa fa-circle-o"></i>All Tag</a></li>
-            </ul>
+{#            <ul class="treeview-menu collapse show" id="configuration-collapse">#}
+{#                <li><a href="{% url 'create_category' %}"><i class="fa fa-circle-o"></i>Add Category</a></li>#}
+{#                <li><a href="{% url 'category_list' %}"><i class="fa fa-circle-o"></i>All Category</a></li>#}
+{#                <li><a href="{% url 'create_list_tag' %}"><i class="fa fa-circle-o"></i>All Tag</a></li>#}
+{#            </ul>#}
         </li>
         <li class="treeview" id="inventory">
             <a href="#">
@@ -90,3 +100,61 @@
         </li>
     </ul>
 </section>
+
+    <div class="flex-shrink-0 p-3" style="width: 280px;">
+
+        <ul class="list-unstyled ps-0">
+          <li class="mb-1">
+            <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed" data-bs-toggle="collapse" data-bs-target="#home-collapse" aria-expanded="true">
+              Home
+            </button>
+            <div class="collapse show" id="home-collapse">
+              <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                <li><a href="#" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Overview</a></li>
+                <li><a href="#" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Updates</a></li>
+                <li><a href="#" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Reports</a></li>
+              </ul>
+            </div>
+          </li>
+          <li class="mb-1">
+            <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed" data-bs-toggle="collapse" data-bs-target="#dashboard-collapse" aria-expanded="false">
+              Dashboard
+            </button>
+            <div class="collapse" id="dashboard-collapse">
+              <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                <li><a href="#" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Overview</a></li>
+                <li><a href="#" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Weekly</a></li>
+                <li><a href="#" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Monthly</a></li>
+                <li><a href="#" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Annually</a></li>
+              </ul>
+            </div>
+          </li>
+          <li class="mb-1">
+            <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed" data-bs-toggle="collapse" data-bs-target="#orders-collapse" aria-expanded="false">
+              Orders
+            </button>
+            <div class="collapse" id="orders-collapse">
+              <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                <li><a href="#" class="link-body-emphasis d-inline-flex text-decoration-none rounded">New</a></li>
+                <li><a href="#" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Processed</a></li>
+                <li><a href="#" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Shipped</a></li>
+                <li><a href="#" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Returned</a></li>
+              </ul>
+            </div>
+          </li>
+          <li class="border-top my-3"></li>
+          <li class="mb-1">
+            <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed" data-bs-toggle="collapse" data-bs-target="#account-collapse" aria-expanded="false">
+              Account
+            </button>
+            <div class="collapse" id="account-collapse">
+              <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                <li><a href="#" class="link-body-emphasis d-inline-flex text-decoration-none rounded">New...</a></li>
+                <li><a href="#" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Profile</a></li>
+                <li><a href="#" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Settings</a></li>
+                <li><a href="#" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Sign out</a></li>
+              </ul>
+            </div>
+          </li>
+        </ul>
+      </div>

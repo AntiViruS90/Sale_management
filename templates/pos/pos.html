@@ -14,7 +14,7 @@
                     <ul class="nav-tabs nav">
                         <li class="active"><a href="#Category0" data-toggle="tab">Clothes</a></li>
                         <li><a href="#Category1" data-toggle="tab">Cellphone</a></li>
-                        <li><a href="#Category2" data-toggle="tab">Jewelry</a></li>
+                        <li><a href="#Category2" data-toggle="tab">Food</a></li>
                         <li><a href="#Category3" data-toggle="tab">Laptop</a></li>
                     </ul>
                     <div class="tab-content">
@@ -69,13 +69,13 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="tab-pane">
+                        <div class="tab-pane" id="Category3">
                             <div class="item_list">
                                 <div class="row">
                                     {% if laptop %}
                                         {% for one in laptop %}
                                             <div class="col-lg-3">
-                                                <a href="{% url 'cart_add' one.id%}">
+                                                <a href="{% url 'cart_add' one.id %}">
                                                     <img src="{{ one.product_image.url }}" alt="">
                                                     <h5 class="box-title">{{ one.title }}</h5>
                                                 </a>
@@ -99,7 +99,12 @@
                             <div class="box-header">
                                 <div class="row">
                                     <div class="col-lg-6">
-                                        <h3 class="box-title">Default Customer</h3>
+                                        <h3 class="box-title">Customer:
+                                            <span class="hidden-xs">{% if request.user.first_name or request.user.last_name %}
+                                                {{ request.user.first_name }} {{request.user.last_name}} {% else %}
+                                                {{ request.user.username }} {% endif %}
+                                            </span>
+                                        </h3>
                                     </div>
                                     <div class="col-lg-6 text-right">
                                         <h3 class="box-title"><a href="#"><i class="fa fa-plus"></i></a></h3>

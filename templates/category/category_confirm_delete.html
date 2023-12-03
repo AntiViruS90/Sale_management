@@ -3,19 +3,20 @@
 {% block title %} {{ object }} Confirm delete {% endblock title %}
 
 {% block content %}
-    <div class="content">
+    <div class="content category_delete_content">
         <div class="row text-center">
             <div class="col-lg-6 col-lg-offset-3 mt-5 text-center">
-                <div class="box">
+                <div class="box category_delete_box">
                     <form method="post">
                         {% csrf_token %}
                         <div class="card pt-3">
                             <div class="card-header">
-                                <h5 class="card-title">Are You sure will You want to delete "{{ object }}"?</h5>
+                                <h5 class="card-title">Are You sure will You want to delete: "{{ object }}"?</h5>
                             </div>
                             <div class="card-body">
                                 <button class="btn btn-danger btn-sm" type="submit">Yes</button>
-                                <a href="{% url 'category_list' %}" class="btn btn-warning btn-sm text-align">No</a>
+                                <button class="btn btn-warning btn-sm" type="submit">
+                                    <a style="text-decoration: none" href="{% url 'category_list' %}">No</a></button>
                             </div>
                         </div>
                     </form>

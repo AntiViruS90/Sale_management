@@ -15,9 +15,9 @@ def bulling_information_view(request):
             for item in cart:
                 OrderItem.objects.create(
                     orderItem=order,
-                    products=item['products'],
+                    products=item['product'],
                     price=item['price'],
-                    quantity=item['quantity']
+                    quantity=item['quantity'],
                 )
             cart.clear()
         return redirect('pos_view')

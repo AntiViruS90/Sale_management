@@ -10,9 +10,9 @@ class Order(BaseEntity):
     email = m.EmailField(blank=True, null=True)
     address = m.CharField(max_length=120, blank=True, null=True)
 
-    def __init__(self, *args, **kwargs):
-        super().__init__(args, kwargs)
-        self.items = None
+    # def __init__(self, *args, **kwargs):
+    #     super().__init__(args, kwargs)
+    #     self.items = None
 
     def __str__(self):
         return f'{self.id} {self.full_name}'
