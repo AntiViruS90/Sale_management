@@ -20,25 +20,69 @@ input[type="checkbox"] {
     width: 10px;
     height: 10px;
 }
-.btn-success {
+.auth-form .form-group .btn-success {
     width: 173px;
+    height: 30px;
+    cursor: pointer;
 }
 .social-auth-links a {
     text-decoration: none;
     color: #fff;
 }
+.skin-red .main-header .navbar .nav>li>a:hover,
+.skin-red .main-header .navbar .nav>li>a:active,
+.skin-red .main-header .navbar .nav>li>a:focus,
+.skin-red .main-header .navbar .nav .open>a,
+.skin-red .main-header .navbar .nav .open>a:hover,
+.skin-red .main-header .navbar .nav .open>a:focus,
+.skin-red .main-header .navbar .nav>.active>a {
+    background: rgba(0,0,0,0.0);
+}
+.skin-red .wrapper,
+.skin-red .main-sidebar,
+.skin-red .left-side {
+    background-color: #045275;
+}
+.new_category_btn,
+.new_inventory_btn,
+.new_product_btn {
+    width: 145px;
+}
+.sidebar-menu:hover {
+    overflow: hidden;
+}
+.user-panel {
+    margin-top: 18px;
+}
 .user-panel>.image>img {
-    width: 77%;
     max-width: 45px;
     height: auto;
     border-radius: 50%;
+}
+.navbar-nav>.user-menu>.dropdown-menu>li.user-header {
+    height: 175px;
+    padding: 10px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.img-circle {
+    margin: 0;
 }
 .user-panel>.info {
     padding: 0px;
     line-height: 1;
     position: absolute;
-    left: 55px;
-    top: -8px;
+    left: 69px;
+    top: 13px;
+}
+.main-header .logo .logo-lg {
+    display: flex;
+    height: 70px;
+    justify-content: center;
+    align-items: center;
 }
 .treeview a span:hover {
     margin-left: 5px;
@@ -52,11 +96,27 @@ ul, li {
 .dropdown-menu {
     display: none;
     background: none;
+    border: none;
 }
 #fa-close {
     position: relative;
     bottom: -22px;
     left: 262px;
+}
+.fa-remove:before,
+.fa-close:before,
+.fa-times:before {
+    content: "\f00d";
+    color: white;
+    cursor: pointer;
+}
+.box {
+    position: relative;
+    border-radius: 3px;
+    background: #60b4eb;
+    margin-bottom: 20px;
+    width: 100%;
+    box-shadow: 0 1px 1px rgba(0,0,0,0.1);
 }
 .box-red {
     border-radius: 14px;
@@ -78,7 +138,8 @@ ul, li {
     border-radius: 0 0 14px 14px;
 }
 .skin-red .main-header .logo {
-    width: 200px;
+        /* width: 200px; */
+    height: max-content;
 }
 @media (max-width: 991px) {
     .navbar-custom-menu .navbar-nav {
@@ -90,7 +151,18 @@ ul, li {
     .skin-red .main-header .logo {
         width: 100%;
     }
+    .user-panel {
+        margin-top: 38px;
+    }
 }
+@media (min-width: 768px) {
+    .sidebar-mini.sidebar-collapse .main-header .logo {
+        width: 50px;
+        height: 70px;
+        padding-top: 10px;
+    }
+}
+
 .img-responsive {
     width: 30%;
     height: 30%;
@@ -116,10 +188,6 @@ ul, li {
 .card {
     text-align: center;
 }
-table tbody tr td {
-    border-bottom: 1px solid;
-    border-right: 1px solid;
-}
 table tbody tr td:nth-child(3),
 table tbody tr td:nth-child(4),
 table tbody tr td:nth-child(5),
@@ -135,15 +203,17 @@ table tbody tr td:last-child button {
 .btn-toggle {
   padding: .25rem .5rem;
   font-weight: 600;
-  color: var(--bs-emphasis-color);
+  color: #bdbad2;
   background-color: transparent;
 }
 .btn-toggle:hover,
 .btn-toggle:focus {
   color: rgba(var(--bs-emphasis-color-rgb), .85);
-  background-color: var(--bs-tertiary-bg);
+  background-color: transparent;
 }
-
+.d-inline-flex {
+    gap: 7px;
+}
 .btn-toggle::before {
   width: 1.25em;
   line-height: 0;
@@ -180,4 +250,43 @@ table tbody tr td:last-child button {
 }
 .fa-pie-chart:before {
     content: "\f200";
+}
+.col-lg-6 .form-group {
+    display: flex;
+    gap: 10px;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: baseline;
+}
+.col-lg-6 .form-group input,
+.col-lg-6 .form-group select {
+    text-align: center;
+}
+#id_category_name,
+#parent,
+#product_category {
+    width: 188px;
+}
+#id_tags,
+#id_full_description,
+#description {
+    width: 188px;
+    height: 50px;
+}
+#picture,
+#imageUpload,
+#product_image {
+    width: 65%;
+}
+.col-lg-6 .input-group {
+    display: flex;
+    flex-direction: column;
+}
+#checkbox_div {
+    display: flex;
+    justify-content: flex-start;
+    align-items: baseline;
+}
+#checkbox_div input[type="checkbox"] {
+    -webkit-transform: scale(1.5);
 }

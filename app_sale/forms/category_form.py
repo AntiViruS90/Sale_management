@@ -10,8 +10,8 @@ class CategoryForm(f.ModelForm):
         fields = '__all__'
 
         widgets = {
-            'name': TextInput(attrs={'class': 'form-control', 'id': 'name'}),
-            'parent': Select(attrs={'class': 'form-control'}),
+            'name': TextInput(attrs={'id': 'name'}),
+            'parent': Select(attrs={'id': 'parent'}),
             'category_image': FileInput(attrs={'class': 'form-control', 'id': 'imageUpload'}),
-            'is_active': CheckboxInput(attrs={'class': 'checkbox', 'id': 'activity'})
+            'is_active': CheckboxInput(attrs={'id': 'activity'})
         }

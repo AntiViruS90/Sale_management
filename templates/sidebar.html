@@ -19,142 +19,213 @@
     </div>
     <ul class="sidebar-menu" data-widget=tree"">
         <li class="header">MAIN FEATURES</li>
-        <li class="mb-1">
-            <a href="#">
-                <i class="fa fa-pie-chart"></i>
-                <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed"
-                        data-bs-toggle="collapse" data-bs-target="#home-collapse" aria-expanded="true">Category</button>
-            </a>
-            <div class="collapse show" id="home-collapse">
-              <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-                <li><a href="{% url 'create_category' %}"
-                       class="link-body-emphasis d-inline-flex text-decoration-none rounded">
-                    <i class="fa fa-circle-o"></i>Add Category</a></li>
-                <li><a href="{% url 'category_list' %}"
-                       class="link-body-emphasis d-inline-flex text-decoration-none rounded">
-                    <i class="fa fa-circle-o"></i>All Category</a></li>
-                <li><a href="{% url 'create_list_tag' %}"
-                       class="link-body-emphasis d-inline-flex text-decoration-none rounded">
-                    <i class="fa fa-circle-o"></i>All Tag</a></li>
-              </ul>
-            </div>
 
-{#            <ul class="treeview-menu collapse show" id="configuration-collapse">#}
-{#                <li><a href="{% url 'create_category' %}"><i class="fa fa-circle-o"></i>Add Category</a></li>#}
-{#                <li><a href="{% url 'category_list' %}"><i class="fa fa-circle-o"></i>All Category</a></li>#}
-{#                <li><a href="{% url 'create_list_tag' %}"><i class="fa fa-circle-o"></i>All Tag</a></li>#}
+
+{#        <ul class="list-unstyled ps-0">#}
+
+
+            <li class="mb-1">
+                <a href="#">
+                    <i class="fa fa-pie-chart"></i>
+                    <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed"
+                            data-bs-toggle="collapse" data-bs-target="#category-collapse" aria-expanded="false">Category</button>
+                </a>
+                <div class="collapse" id="category-collapse">
+                  <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                    <li><a href="{% url 'create_category' %}"
+                           class="link-body-emphasis d-inline-flex text-decoration-none rounded">
+                        <i class="fa fa-circle-o"></i>Add Category</a></li>
+                    <li><a href="{% url 'category_list' %}"
+                           class="link-body-emphasis d-inline-flex text-decoration-none rounded">
+                        <i class="fa fa-circle-o"></i>All Category</a></li>
+                    <li><a href="{% url 'create_list_tag' %}"
+                           class="link-body-emphasis d-inline-flex text-decoration-none rounded">
+                        <i class="fa fa-circle-o"></i>All Tag</a></li>
+                  </ul>
+                </div>
+            </li>
+            <li class="mb-1">
+                <a href="#">
+                    <i class="fa fa-laptop"></i>
+                    <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed"
+                            data-bs-toggle="collapse" data-bs-target="#inventory-collapse" aria-expanded="false">Inventory</button>
+                </a>
+                <div class="collapse" id="inventory-collapse">
+                  <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                    <li><a href="{% url 'create_inventory' %}"
+                           class="link-body-emphasis d-inline-flex text-decoration-none rounded">
+                        <i class="fa fa-circle-o"></i>Add Inventory</a></li>
+                    <li><a href="{% url 'inventory_list' %}"
+                           class="link-body-emphasis d-inline-flex text-decoration-none rounded">
+                        <i class="fa fa-circle-o"></i>All Inventory</a></li>
+                  </ul>
+                </div>
+            </li>
+            <li class="mb-1">
+                <a href="#">
+                    <i class="fa fa-product-hunt"></i>
+                    <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed"
+                            data-bs-toggle="collapse" data-bs-target="#product-collapse" aria-expanded="false">Product</button>
+                </a>
+                <div class="collapse" id="product-collapse">
+                  <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                    <li><a href="{% url 'product_create' %}"
+                           class="link-body-emphasis d-inline-flex text-decoration-none rounded">
+                        <i class="fa fa-circle-o"></i>Add Product</a></li>
+                    <li><a href="{% url 'product_list' %}"
+                           class="link-body-emphasis d-inline-flex text-decoration-none rounded">
+                        <i class="fa fa-circle-o"></i>All Product</a></li>
+                  </ul>
+                </div>
+            </li>
+            <li class="mb-1">
+                <a href="#">
+                    <i class="fa fa-first-order"></i>
+                    <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed"
+                            data-bs-toggle="collapse" data-bs-target="#order-collapse" aria-expanded="false">POS</button>
+                </a>
+                <div class="collapse" id="order-collapse">
+                  <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                    <li><a href="{% url 'pos_view' %}"
+                           class="link-body-emphasis d-inline-flex text-decoration-none rounded">
+                        <i class="fa fa-circle-o"></i>Create Order</a></li>
+                    <li><a href="{% url 'order_information' %}"
+                           class="link-body-emphasis d-inline-flex text-decoration-none rounded">
+                        <i class="fa fa-circle-o"></i>Order Record</a></li>
+                  </ul>
+                </div>
+            </li>
+            <li class="mb-1">
+                <a href="#">
+                    <i class="fa fa-gears"></i>
+                    <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed"
+                            data-bs-toggle="collapse" data-bs-target="#settings-collapse" aria-expanded="false">Settings</button>
+                </a>
+                <div class="collapse" id="settings-collapse">
+                  <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                    <li><a href="#" class="link-body-emphasis d-inline-flex text-decoration-none rounded">
+                        <i class="fa fa-circle-o"></i>Password Change</a></li>
+                    <li><a href="#" class="link-body-emphasis d-inline-flex text-decoration-none rounded">
+                        <i class="fa fa-circle-o"></i>Add User</a></li>
+                    <li><a href="#" class="link-body-emphasis d-inline-flex text-decoration-none rounded">
+                        <i class="fa fa-circle-o"></i>All User</a></li>
+                  </ul>
+                </div>
+            </li>
+
+{#        </ul>#}
+
+
+{#        <li class="treeview" id="inventory">#}
+{#            <a href="#">#}
+{#                <i class="fa fa-laptop"></i>#}
+{#                <span>Inventory</span>#}
+{#                <span class="pull-right-container">#}
+{#                    <i class="fa fa-angle-left pull-right" id="inventory_angle"></i>#}
+{#                </span>#}
+{#            </a>#}
+{#            <ul class="treeview-menu" id="inventory_menu">#}
+{#                <li><a href="{% url 'create_inventory' %}"><i class="fa fa-circle-o"></i>Add Inventory</a></li>#}
+{#                <li><a href="{% url 'inventory_list' %}"><i class="fa fa-circle-o"></i>All Inventory</a></li>#}
 {#            </ul>#}
-        </li>
-        <li class="treeview" id="inventory">
-            <a href="#">
-                <i class="fa fa-laptop"></i>
-                <span>Inventory</span>
-                <span class="pull-right-container">
-                    <i class="fa fa-angle-left pull-right" id="inventory_angle"></i>
-                </span>
-            </a>
-            <ul class="treeview-menu" id="inventory_menu">
-                <li><a href="{% url 'create_inventory' %}"><i class="fa fa-circle-o"></i>Add Inventory</a></li>
-                <li><a href="{% url 'inventory_list' %}"><i class="fa fa-circle-o"></i>All Inventory</a></li>
-            </ul>
-        </li>
-        <li class="treeview" id="product">
-            <a href="#">
-                <i class="fa fa-product-hunt"></i>
-                <span>Product</span>
-                <span class="pull-right-container">
-                    <i class="fa fa-angle-left pull-right" id="product_angle"></i>
-                </span>
-            </a>
-            <ul class="treeview-menu" id="product_menu">
-                <li><a href="{% url 'product_create' %}"><i class="fa fa-circle-o"></i>Add Product</a></li>
-                <li><a href="{% url 'product_list' %}"><i class="fa fa-circle-o"></i>All Product</a></li>
-            </ul>
-        </li>
-        <li class="treeview" id="POS">
-            <a href="#">
-                <i class="fa fa-first-order"></i>
-                <span>POS</span>
-                <span class="pull-right-container">
-                    <i class="fa fa-angle-left pull-right" id="POS_angle"></i>
-                </span>
-            </a>
-            <ul class="treeview-menu" id="POS_menu">
-                <li><a href="{% url 'pos_view' %}"><i class="fa fa-circle-o"></i>Create Order</a></li>
-                <li><a href="{% url 'order_information' %}"><i class="fa fa-circle-o"></i>Order Record</a></li>
-            </ul>
-        </li>
-        <li class="treeview" id="settings">
-            <a href="#">
-                <i class="fa fa-gears"></i>
-                <span>Settings</span>
-                <span class="pull-right-container">
-                    <i class="fa fa-angle-left pull-right" id="settings_angle"></i>
-                </span>
-            </a>
-            <ul class="treeview-menu" id="settings_menu">
-                <li><a href="#"><i class="fa fa-circle-o"></i>Password Change</a></li>
-                <li><a href="#"><i class="fa fa-circle-o"></i>Add User</a></li>
-                <li><a href="#"><i class="fa fa-circle-o"></i>All User</a></li>
-            </ul>
-        </li>
+{#        </li>#}
+{#        <li class="treeview" id="product">#}
+{#            <a href="#">#}
+{#                <i class="fa fa-product-hunt"></i>#}
+{#                <span>Product</span>#}
+{#                <span class="pull-right-container">#}
+{#                    <i class="fa fa-angle-left pull-right" id="product_angle"></i>#}
+{#                </span>#}
+{#            </a>#}
+{#            <ul class="treeview-menu" id="product_menu">#}
+{#                <li><a href="{% url 'product_create' %}"><i class="fa fa-circle-o"></i>Add Product</a></li>#}
+{#                <li><a href="{% url 'product_list' %}"><i class="fa fa-circle-o"></i>All Product</a></li>#}
+{#            </ul>#}
+{#        </li>#}
+{#        <li class="treeview" id="POS">#}
+{#            <a href="#">#}
+{#                <i class="fa fa-first-order"></i>#}
+{#                <span>POS</span>#}
+{#                <span class="pull-right-container">#}
+{#                    <i class="fa fa-angle-left pull-right" id="POS_angle"></i>#}
+{#                </span>#}
+{#            </a>#}
+{#            <ul class="treeview-menu" id="POS_menu">#}
+{#                <li><a href="{% url 'pos_view' %}"><i class="fa fa-circle-o"></i>Create Order</a></li>#}
+{#                <li><a href="{% url 'order_information' %}"><i class="fa fa-circle-o"></i>Order Record</a></li>#}
+{#            </ul>#}
+{#        </li>#}
+{#        <li class="treeview" id="settings">#}
+{#            <a href="#">#}
+{#                <i class="fa fa-gears"></i>#}
+{#                <span>Settings</span>#}
+{#                <span class="pull-right-container">#}
+{#                    <i class="fa fa-angle-left pull-right" id="settings_angle"></i>#}
+{#                </span>#}
+{#            </a>#}
+{#            <ul class="treeview-menu" id="settings_menu">#}
+{#                <li><a href="#"><i class="fa fa-circle-o"></i>Password Change</a></li>#}
+{#                <li><a href="#"><i class="fa fa-circle-o"></i>Add User</a></li>#}
+{#                <li><a href="#"><i class="fa fa-circle-o"></i>All User</a></li>#}
+{#            </ul>#}
+{#        </li>#}
     </ul>
 </section>
 
     <div class="flex-shrink-0 p-3" style="width: 280px;">
 
         <ul class="list-unstyled ps-0">
-          <li class="mb-1">
-            <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed" data-bs-toggle="collapse" data-bs-target="#home-collapse" aria-expanded="true">
-              Home
-            </button>
-            <div class="collapse show" id="home-collapse">
-              <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-                <li><a href="#" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Overview</a></li>
-                <li><a href="#" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Updates</a></li>
-                <li><a href="#" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Reports</a></li>
-              </ul>
-            </div>
-          </li>
-          <li class="mb-1">
-            <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed" data-bs-toggle="collapse" data-bs-target="#dashboard-collapse" aria-expanded="false">
-              Dashboard
-            </button>
-            <div class="collapse" id="dashboard-collapse">
-              <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-                <li><a href="#" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Overview</a></li>
-                <li><a href="#" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Weekly</a></li>
-                <li><a href="#" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Monthly</a></li>
-                <li><a href="#" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Annually</a></li>
-              </ul>
-            </div>
-          </li>
-          <li class="mb-1">
-            <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed" data-bs-toggle="collapse" data-bs-target="#orders-collapse" aria-expanded="false">
-              Orders
-            </button>
-            <div class="collapse" id="orders-collapse">
-              <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-                <li><a href="#" class="link-body-emphasis d-inline-flex text-decoration-none rounded">New</a></li>
-                <li><a href="#" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Processed</a></li>
-                <li><a href="#" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Shipped</a></li>
-                <li><a href="#" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Returned</a></li>
-              </ul>
-            </div>
-          </li>
-          <li class="border-top my-3"></li>
-          <li class="mb-1">
-            <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed" data-bs-toggle="collapse" data-bs-target="#account-collapse" aria-expanded="false">
-              Account
-            </button>
-            <div class="collapse" id="account-collapse">
-              <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-                <li><a href="#" class="link-body-emphasis d-inline-flex text-decoration-none rounded">New...</a></li>
-                <li><a href="#" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Profile</a></li>
-                <li><a href="#" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Settings</a></li>
-                <li><a href="#" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Sign out</a></li>
-              </ul>
-            </div>
-          </li>
+{#          <li class="mb-1">#}
+{#            <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed" data-bs-toggle="collapse" data-bs-target="#home-collapse" aria-expanded="true">#}
+{#              Home#}
+{#            </button>#}
+{#            <div class="collapse show" id="home-collapse">#}
+{#              <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">#}
+{#                <li><a href="#" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Overview</a></li>#}
+{#                <li><a href="#" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Updates</a></li>#}
+{#                <li><a href="#" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Reports</a></li>#}
+{#              </ul>#}
+{#            </div>#}
+{#          </li>#}
+{#          <li class="mb-1">#}
+{#            <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed" data-bs-toggle="collapse" data-bs-target="#dashboard-collapse" aria-expanded="false">#}
+{#              Dashboard#}
+{#            </button>#}
+{#            <div class="collapse" id="dashboard-collapse">#}
+{#              <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">#}
+{#                <li><a href="#" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Overview</a></li>#}
+{#                <li><a href="#" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Weekly</a></li>#}
+{#                <li><a href="#" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Monthly</a></li>#}
+{#                <li><a href="#" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Annually</a></li>#}
+{#              </ul>#}
+{#            </div>#}
+{#          </li>#}
+{#          <li class="mb-1">#}
+{#            <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed" data-bs-toggle="collapse" data-bs-target="#orders-collapse" aria-expanded="false">#}
+{#              Orders#}
+{#            </button>#}
+{#            <div class="collapse" id="orders-collapse">#}
+{#              <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">#}
+{#                <li><a href="#" class="link-body-emphasis d-inline-flex text-decoration-none rounded">New</a></li>#}
+{#                <li><a href="#" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Processed</a></li>#}
+{#                <li><a href="#" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Shipped</a></li>#}
+{#                <li><a href="#" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Returned</a></li>#}
+{#              </ul>#}
+{#            </div>#}
+{#          </li>#}
+{#          <li class="border-top my-3"></li>#}
+{#          <li class="mb-1">#}
+{#            <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed" data-bs-toggle="collapse" data-bs-target="#account-collapse" aria-expanded="false">#}
+{#              Account#}
+{#            </button>#}
+{#            <div class="collapse" id="account-collapse">#}
+{#              <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">#}
+{#                <li><a href="#" class="link-body-emphasis d-inline-flex text-decoration-none rounded">New...</a></li>#}
+{#                <li><a href="#" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Profile</a></li>#}
+{#                <li><a href="#" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Settings</a></li>#}
+{#                <li><a href="#" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Sign out</a></li>#}
+{#              </ul>#}
+{#            </div>#}
+{#          </li>#}
         </ul>
       </div>

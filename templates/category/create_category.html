@@ -35,28 +35,25 @@
                                     <div class="form-group">
                                         <label for="name">Category Name</label>
                                         {{ form.name }}
+                                    </div>
+                                    <div class="form-group">
                                         <label for="name">Parent Category</label>
                                         {{ form.parent }}
                                     </div>
                                 </div>
                                 <div class="col-lg-6">
-                                    <div class="input-group">
-                                        <div class="input-group-prepend">
-                                            <span class="input-group-text" id="imageUpload">Upload</span>
-                                        </div>
-                                        <div class="custom-file">
+                                    <div class="form-group">
+                                        <label class="custom-file-label" for="imageUpload">Category Image</label>
                                             {{ form.category_image }}
-                                            <label class="custom-file-label" for="imageUpload">Category Image</label>
-                                        </div>
                                     </div>
                                     <br>
-                                    <div class="form-group">
-                                        <label for="">Is Active</label>
+                                    <div class="form-group" id="checkbox_div">
                                         {{ form.is_active }}
+                                        <label for="">Is Active</label>
                                     </div>
                                 </div>
                             </div>
-                            <button class="btn btn-success" type="submit">Save</button>
+                            <button class="btn btn-success new_category_btn" type="submit">Save</button>
                         </form>
                     </div>
                 </div>

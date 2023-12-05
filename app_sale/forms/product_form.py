@@ -9,9 +9,9 @@ class ProductForm(f.ModelForm):
         model = Product
         fields = '__all__'
         widgets = {
-            'title': TextInput(attrs={'class': 'form-control', 'id': 'title', 'placeholder': 'Enter Product Name'}),
-            'product_category': Select(attrs={'class': 'form-control', 'id': 'product_category'}),
-            'price': NumberInput(attrs={'class': 'form-control', 'id': 'price'}),
-            'description': Textarea(attrs={'class': 'form-control', 'id': 'description'}),
+            'title': TextInput(attrs={'id': 'title', 'placeholder': 'Enter Product Name'}),
+            'product_category': Select(attrs={'id': 'product_category'}),
+            'price': NumberInput(attrs={'id': 'price'}),
+            'description': Textarea(attrs={'id': 'description'}),
             'product_image': FileInput(attrs={'class': 'form-control', 'id': 'product_image'})
         }
