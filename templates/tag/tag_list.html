@@ -20,15 +20,40 @@
                                 <h3 class="box-title">Tag List {% include 'common/message.html' %}</h3>
                             </div>
                             <div class="col-lg-6 text-right">
-                                <button type="button" data-backdrop="static" data-keyboard="false"
+                                <a href="{% url 'create_list_tag' %}" type="button" data-backdrop="static" data-keyboard="false"
                                     class="btn btn-primary btn-sm" data-toggle="modal" data-bs-target="#modal-primary">
-                                    <i class="fa fa-plus"></i>
-                                </button>
+                                    <i class="fa fa-plus"></i></a>
                             </div>
                         </div>
                     </div>
 
-                    {% include 'tag/tag_list_component.html' %}
+                    <div class="box-body">
+                        {% if tag_list %}
+                            <table class="table table-bordered table-striped">
+                                <tbody>
+                                    <tr>
+                                        <th>Tag Name</th>
+                                        <th>Created At</th>
+                                        <th>Updated At</th>
+                                        <th class="text-center">Action</th>
+                                    </tr>
+                                    {% for tag in tag_list %}
+                                        <tr>
+                                            <td>{{ tag.name }}</td>
+                                            <td>{{ tag.created_at }}</td>
+                                            <td>{{ tag.update_at }}</td>
+                                            <td class="text-center">
+                                                <a href="{% url 'tag_delete' tag.pk %}" class="btn btn-danger btn-sm">
+                                                    <i class="fa fa-trash"></i></a>
+                                            </td>
+                                        </tr>
+                                    {% endfor %}
+                                </tbody>
+                            </table>
+                        {% else %}
+                            <h2>Tag not added yet</h2>
+                        {% endif %}
+                    </div>
 
                     <div class="box-footer clearfix">
                         {% include 'common/pagination.html' %}
@@ -37,5 +62,5 @@
             </div>
         </div>
     </div>
-    {% include 'tag/modal.html' %}
+
 {% endblock content %}

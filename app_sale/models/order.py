@@ -5,10 +5,10 @@ from app_sale.models.product import Product
 
 
 class Order(BaseEntity):
-    full_name = m.CharField(max_length=70, blank=True, null=True)
-    phn_number = m.CharField(max_length=20, blank=True, null=True)
-    email = m.EmailField(blank=True, null=True)
-    address = m.CharField(max_length=120, blank=True, null=True)
+    full_name = m.CharField(max_length=70)
+    phn_number = m.CharField(max_length=20)
+    email = m.EmailField()
+    address = m.CharField(max_length=120)
 
     # def __init__(self, *args, **kwargs):
     #     super().__init__(args, kwargs)

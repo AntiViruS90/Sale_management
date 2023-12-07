@@ -9,17 +9,23 @@ from app_sale.forms.tag_form import TagForm
 
 
 @method_decorator(login_required(login_url='/login/'), name='dispatch')
-class CreateListTagView(SuccessMessageMixin, CreateView, ListView):
-    template_name = 'tag/tag_list.html'
+class CreateListTagView(SuccessMessageMixin, CreateView):
+    template_name = 'tag/create_tag.html'
+    success_message = "Tag has been successfully created!"
     model = Tag
     form_class = TagForm
-    success_message = "Tag has been successfully created!"
-    success_url = '/tag/'
-    context_object_name = 'tag'
+    success_url = '/tag-create'
+
+
+@method_decorator(login_required(login_url='/login/'), name='dispatch')
+class TagListView(ListView):
+    template_name = 'tag/tag_list.html'
+    context_object_name = 'tag_list'
+    model = Tag
     paginate_by = 10
 
     def get_context_data(self, **kwargs):
-        context = super(CreateListTagView, self).get_context_data(**kwargs)
+        context = super(TagListView, self).get_context_data(**kwargs)
         tag = self.get_queryset()
         page = self.request.GET.get('page')
         paginator = Paginator(tag, self.paginate_by)

@@ -21,7 +21,7 @@
                     </div>
                         <div class="box-body">
                         {% if inventory_list %}
-                            <table class="table table-bordered">
+                            <table class="table table-bordered table-dark">
                                 <tbody>
                                     <tr>
                                         <th>Inventory Name</th>
@@ -31,7 +31,6 @@
                                         <th>Sales price</th>
                                         <th>Promotional price</th>
                                         <th>Created</th>
-                                        <th>Updated</th>
                                         <th class="text-center">Actions</th>
                                     </tr>
                                     {% for inventory in inventory_list %}
@@ -43,8 +42,7 @@
                                             <td>BDT {{ inventory.sales_price }}</td>
                                             <td>BDT {{ inventory.promotional_price }}</td>
                                             <td>{{ inventory.created_at }}</td>
-                                            <td>{{ inventory.updated_at }}</td>
-                                            <td class="text">
+                                            <td class="text-center">
                                                 <a href="{% url 'inventory_detail' inventory.pk %}" class="btn btn-info btn-sm">
                                                     <i class="fa fa-eye"></i></a>
                                                 <a href="{% url 'inventory_update' inventory.pk %}" class="btn btn-info btn-sm">

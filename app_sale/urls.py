@@ -4,7 +4,7 @@ from app_sale.views.auth_view import UserLoginView, LogoutView
 from app_sale.views.category_view import CategoryCreateView, CategoryListView, CategoryUpdateView, CategoryDeleteView
 from app_sale.views.inventory_view import InventoryCreateView, InventoryListView, InventoryDetailView, \
     InventoryUpdateView, InventoryDeleteView
-from app_sale.views.tag_view import CreateListTagView, TagDeleteView
+from app_sale.views.tag_view import CreateListTagView, TagDeleteView, TagListView
 from app_sale.views.product_view import CreateProductView, ProductListView
 
 from app_sale.views.pos_view import POSView, cart_add, cart_updated, cart_remove
@@ -23,7 +23,8 @@ urlpatterns = [
     path('inventory/<pk>', InventoryDetailView.as_view(), name='inventory_detail'),
     path('inventory-update/<pk>', InventoryUpdateView.as_view(), name='inventory_update'),
     path('inventory-delete/<pk>', InventoryDeleteView.as_view(), name='inventory_delete'),
-    path('tag/', CreateListTagView.as_view(), name='create_list_tag'),
+    path('tag-create/', CreateListTagView.as_view(), name='create_list_tag'),
+    path('tag/', TagListView.as_view(), name='tag_list'),
     path('tag/<pk>', TagDeleteView.as_view(), name='tag_delete'),
     path('create-product/', CreateProductView.as_view(), name='product_create'),
     path('product-list/', ProductListView.as_view(), name='product_list'),

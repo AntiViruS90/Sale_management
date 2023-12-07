@@ -1,6 +1,7 @@
 .content-wrapper {
-    background: linear-gradient(37deg, lightgrey, lightskyblue, lightblue);
+    background: #04859D;
 }
+/*linear-gradient(37deg, lightgrey, lightskyblue, lightblue)*/
 .auth-form {
     display: flex;
     flex-direction: column;
@@ -11,9 +12,13 @@
     margin-left: -2px;
     font-size: 14px;
 }
-.input_login {
+.input_login,
+#id_password {
     border: none;
     margin-bottom: 10px;
+    height: 25px;
+    text-align: center;
+    border-radius: 3px;
 }
 input[type="checkbox"] {
     margin: 1px;
@@ -21,8 +26,8 @@ input[type="checkbox"] {
     height: 10px;
 }
 .auth-form .form-group .btn-success {
-    width: 173px;
-    height: 30px;
+    width: 166px;
+    height: 25px;
     cursor: pointer;
 }
 .social-auth-links a {
@@ -38,10 +43,35 @@ input[type="checkbox"] {
 .skin-red .main-header .navbar .nav>.active>a {
     background: rgba(0,0,0,0.0);
 }
+.skin-red .main-header .logo {
+    background-color: #206876;
+    color: #fff;
+    border-bottom: 0 solid transparent;
+}
+.skin-red .main-header .logo:hover {
+    background-color: #37B6CE;
+    color: #0e454f;
+    text-decoration: underline;
+}
+/*#d73925*/
+.skin-red .main-header .navbar {
+    background-color: #37B6CE;
+}
+.skin-red .main-header .navbar .sidebar-toggle:hover {
+    background-color: #5FBDCE;
+    border-radius: 4px;
+}
+/*#dd4b39*/
 .skin-red .wrapper,
 .skin-red .main-sidebar,
 .skin-red .left-side {
     background-color: #045275;
+}
+.main-footer {
+    background: #5FBDCE;
+    padding: 15px;
+    color: #444;
+    border-top: 1px solid #d2d6de;
 }
 .new_category_btn,
 .new_inventory_btn,
@@ -287,6 +317,7 @@ table tbody tr td:last-child button {
     justify-content: flex-start;
     align-items: baseline;
 }
-#checkbox_div input[type="checkbox"] {
+#checkbox_div input[type="checkbox"],
+#id_remember_me {
     -webkit-transform: scale(1.5);
 }

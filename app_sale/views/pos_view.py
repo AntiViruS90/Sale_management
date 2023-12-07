@@ -9,7 +9,7 @@ from app_sale.addcart import Cart
 class POSView(View):
 
     def get(self, request):
-        cosmetic = Product.objects.filter(product_category__id=1)
+        clothes = Product.objects.filter(product_category__id=2)
         tech = Product.objects.filter(product_category__id=3)
         laptop = Product.objects.filter(product_category__id=4)
         food = Product.objects.filter(product_category__id=6)
@@ -19,7 +19,7 @@ class POSView(View):
             item['update_quantity_form'] = {'quantity': item['quantity'], 'update': True}
 
         context = {
-            'cosmetic': cosmetic,
+            'clothes': clothes,
             'tech': tech,
             'laptop': laptop,
             'food': food,
